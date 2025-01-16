@@ -7,13 +7,14 @@ Pod::Spec.new do |spec|
   spec.license      = { :type => 'MIT', :text => 'Copyright © 2021 TMB Bank Public Company Limited. All rights reserved.' }
   spec.author       = { "fluke" => "fluke@odds.team" }
   spec.source       = { :git => "git@github.com:flukeOddsteam/POCUIKit.git", :tag => "#{spec.version}" }
-  spec.source_files  = "POCUIKit/Source/**/*.{swift,h,m}"
+  spec.source_files = "POCUIKit/Source/**/*.{swift,h,m}"
   spec.resources    = [
     "POCUIKit/Source/**/*.{strings,xcassets,storyboard,xib,json,ttf,txt}"
   ]
+  spec.public_header_files = 'POCUIKit/Source/**/*.h'
 
   spec.ios.deployment_target = "12.0"
-  spec.static_framework = true
+  spec.static_framework = false
   spec.swift_version = "5.1"
 
   spec.subspec 'Lib' do |lib|
@@ -24,3 +25,4 @@ Pod::Spec.new do |spec|
     lib.dependency 'OneAppDesignSystem', '11.5.0'
   end
 end
+
